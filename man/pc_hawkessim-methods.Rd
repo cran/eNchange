@@ -5,12 +5,12 @@
 \alias{pc_hawkessim-class}
 \alias{pc_hawkessim}
 \alias{pc_hawkessim-methods}
-\alias{pc_hawkessim,simHawkes-method}
+\alias{pc_hawkessim,ANY-method}
 \title{A method to simulate nonstationary Hawkes models.}
 \usage{
 pc_hawkessim(object)
 
-\S4method{pc_hawkessim}{simHawkes}(object)
+\S4method{pc_hawkessim}{ANY}(object)
 }
 \arguments{
 \item{object}{a simHawkes object}
@@ -19,7 +19,7 @@ pc_hawkessim(object)
 Returns an object of \code{simHawkes} class containing a simulated piecewise constant Hawkes series.
 }
 \description{
-A S4 method that takes as an input a \code{simHawkes} object and outputs a simulated nonstationary Hawkes model. The formulation of the of the 
+A S4 method that takes as an input a \code{simHawkes} object and outputs a simulated nonstationary Hawkes model. The formulation of the of the
 piecewise constant ACD model is given in the \code{simHawkes} class.
 }
 \examples{
@@ -34,5 +34,5 @@ ts.plot(pw.hawk.obj@H)
 ts.plot(pw.hawk.obj@cH)
 }
 \references{
-Korkas Karolos. "Ensemble Binary Segmentation for irregularly spaced data with change-points" <arXiv:2003.03649>.
+Korkas, K.K., 2022. Ensemble binary segmentation for irregularly spaced data with change-points. Journal of the Korean Statistical Society, 51(1), pp.65-86.
 }

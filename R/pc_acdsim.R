@@ -1,10 +1,9 @@
 #' A method to simulate nonstationary ACD models.
 #' @name pc_acdsim-class
 #' @param object a simACD object
-#' @description A S4 method that takes as an input a \code{simACD} object and outputs a simulated nonstationary ACD(1,1) model. The formulation of the of the 
+#' @description A S4 method that takes as an input a \code{simACD} object and outputs a simulated nonstationary ACD(1,1) model. The formulation of the of the
 #' piecewise constant ACD model is given in the \code{simACD} class.
-#' @references
-#' Korkas Karolos. "Ensemble Binary Segmentation for irregularly spaced data with change-points" Preprint.
+#' @references Korkas, K.K., 2022. Ensemble binary segmentation for irregularly spaced data with change-points. Journal of the Korean Statistical Society, 51(1), pp.65-86.
 #' @examples
 #' pw.acd.obj <- new("simACD")
 #' pw.acd.obj@cp.loc <- c(0.25,0.75)
@@ -17,7 +16,7 @@
 #' ts.plot(pw.acd.obj@psi)
 #' @import Rcpp foreach doParallel parallel iterators
 #' @importFrom stats rnorm rgeom runif rexp
-#' @importFrom utils head tail 
+#' @importFrom utils head tail
 #' @useDynLib eNchange, .registration = TRUE
 #' @export
 #' @return Returns an object of \code{simACD} class containing a simulated piecewise constant ACD time series.
@@ -31,7 +30,7 @@ setGeneric(name="pc_acdsim",
            }
 )
 #' @rdname pc_acdsim-methods
-setMethod(f="pc_acdsim", signature= "simACD", definition = function(object) {
+setMethod(f="pc_acdsim", signature(object = "ANY"), definition = function(object) {
     if (is.null(object@cp.loc)){
       temp.H=sim.ACD(object@N,object@lambda_0,object@alpha,object@beta,object@BurnIn)
       object@x=temp.H[[1]]

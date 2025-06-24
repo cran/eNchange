@@ -67,7 +67,7 @@ boot_thresh(
 Returns the threshold \code{C}.
 }
 \description{
-A bootstrap method to calculate the threshold (stopping rule) in the BS or EBS segmentation described in Cho and Korkas (2018) and adapted for irregularly time series in Korkas (2020).
+A bootstrap method to calculate the threshold (stopping rule) in the BS or EBS segmentation described in Cho and Korkas (2022) and adapted for irregularly time series in Korkas (2022).
 }
 \examples{
 pw.acd.obj <- new("simACD")
@@ -80,5 +80,5 @@ pw.acd.obj <- pc_acdsim(pw.acd.obj)
 boot_thresh(pw.acd.obj@x,r=20)
 }
 \references{
-Cho, Haeran, and Karolos Korkas. "High-dimensional GARCH process segmentation with an application to Value-at-Risk." arXiv preprint <arXiv:1706.01155> (2018).
+Cho, H. and Korkas, K.K., 2022. High-dimensional GARCH process segmentation with an application to Value-at-Risk. Econometrics and Statistics, 23, pp.187-203.
 }

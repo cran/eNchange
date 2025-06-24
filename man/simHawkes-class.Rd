@@ -8,7 +8,7 @@
 Returns an object of \code{simHawkes} class.
 }
 \description{
-A specification class to create an object of a simulated piecewise constant Hawkes model of order (1,1). 
+A specification class to create an object of a simulated piecewise constant Hawkes model of order (1,1).
 We consider the following time-varying piecewise constant Hawkes process (which we term tvHawkes)
 \eqn{\lambda({\upsilon}) = \lambda_0({\upsilon}) +\sum_{{\upsilon}_t < s} \alpha({\upsilon})e^{-\beta({\upsilon}) ({\upsilon}-{\upsilon}_t)}, \ \mbox{for} \ {\upsilon} = 1, \ldots,T}.
 }
@@ -44,5 +44,5 @@ ts.plot(pw.hawk.obj@H)
 ts.plot(pw.hawk.obj@cH)
 }
 \references{
-Korkas Karolos. "Ensemble Binary Segmentation for irregularly spaced data with change-points" Preprint.
+Korkas, K.K., 2022. Ensemble binary segmentation for irregularly spaced data with change-points. Journal of the Korean Statistical Society, 51(1), pp.65-86.
 }

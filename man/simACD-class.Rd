@@ -8,11 +8,11 @@
 Returns an object of \code{simACD} class.
 }
 \description{
-A specification class to create an object of a simulated piecewise constant conditional duration model of order (1,1). 
+A specification class to create an object of a simulated piecewise constant conditional duration model of order (1,1).
 \eqn{x_t / \psi_t = \varepsilon_t \; \sim \mathcal{G}(\theta_2)}
 \eqn{\psi_t = \omega(t) + \sum_{j=1}^p \alpha_{j}(t)x_{t-j} + \sum_{k=1}^q \beta_{k}(t)\psi_{t-k}.}
 where \eqn{\psi_{t} = \mathcal{E} [x_t | x_t,\ldots,x_1| \theta_1]} is the conditional mean duration of the \eqn{t}-th event with parameter vector \eqn{\theta_1} and \eqn{\mathcal{G}(.)}
-is a general distribution over \eqn{(0,+\infty)} with mean equal to 1 and parameter vector 
+is a general distribution over \eqn{(0,+\infty)} with mean equal to 1 and parameter vector
 \eqn{\theta_2}. In this work we assume that \eqn{\varepsilon_t \; \sim \exp(1)}.
 }
 \section{Slots}{
@@ -47,5 +47,5 @@ ts.plot(pw.acd.obj@x)
 ts.plot(pw.acd.obj@psi)
 }
 \references{
-Korkas Karolos. "Ensemble Binary Segmentation for irregularly spaced data with change-points" Preprint.
+Korkas, K.K., 2022. Ensemble binary segmentation for irregularly spaced data with change-points. Journal of the Korean Statistical Society, 51(1), pp.65-86.
 }

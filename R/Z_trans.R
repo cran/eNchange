@@ -1,5 +1,5 @@
 #' Transformation of an irregularly spaces time series.
-#' @references Korkas Karolos. "Ensemble Binary Segmentation for irregularly spaced data with change-points" Preprint <arXiv:2003.03649>.
+#' @references Korkas, K.K., 2022. Ensemble binary segmentation for irregularly spaced data with change-points. Journal of the Korean Statistical Society, 51(1), pp.65-86.
 #' @rdname Z_trans-methods
 #' @description Transformation of a irregularly spaces time series. For the tvACD model, we calculate
 #' \eqn{U_t = g_0(x_t, \psi_t) = \frac{x_t}{{\psi}_t}}, where

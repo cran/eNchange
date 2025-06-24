@@ -1,7 +1,7 @@
 #' An S4 class for a nonstationary ACD model.
 #' @name simHawkes-class
 #' @rdname simHawkes-class
-#' @description A specification class to create an object of a simulated piecewise constant Hawkes model of order (1,1). 
+#' @description A specification class to create an object of a simulated piecewise constant Hawkes model of order (1,1).
 #' We consider the following time-varying piecewise constant Hawkes process (which we term tvHawkes)
 #' \eqn{\lambda({\upsilon}) = \lambda_0({\upsilon}) +\sum_{{\upsilon}_t < s} \alpha({\upsilon})e^{-\beta({\upsilon}) ({\upsilon}-{\upsilon}_t)}, \ \mbox{for} \ {\upsilon} = 1, \ldots,T}.
 #' @slot H The durational time series.
@@ -13,7 +13,7 @@
 #' @slot alpha The vector of the parameters alpha in the Hawkes model as in the above formula.
 #' @slot beta The vector of the parameters beta in the Hawkes model as in the above formula.
 #' @references
-#' Korkas Karolos. "Ensemble Binary Segmentation for irregularly spaced data with change-points" Preprint.
+#' Korkas, K.K., 2022. Ensemble binary segmentation for irregularly spaced data with change-points. Journal of the Korean Statistical Society, 51(1), pp.65-86.
 #' @examples
 #' pw.hawk.obj <- new("simHawkes")
 #' pw.hawk.obj@cp.loc <- c(0.5)
@@ -30,7 +30,7 @@
 #' @useDynLib eNchange, .registration = TRUE
 #' @export
 #' @return Returns an object of \code{simHawkes} class.
-setClass("simHawkes", 
+setClass("simHawkes",
          slots = c(
            H = "numeric",
            cH = "numeric",

@@ -1,7 +1,7 @@
 #' A bootstrap method to calculate the threshold (stopping rule) in the BS or EBS segmentation.
-#' @references Cho, Haeran, and Karolos Korkas. "High-dimensional GARCH process segmentation with an application to Value-at-Risk." arXiv preprint <arXiv:1706.01155> (2018).
+#' @references Cho, H. and Korkas, K.K., 2022. High-dimensional GARCH process segmentation with an application to Value-at-Risk. Econometrics and Statistics, 23, pp.187-203.
 #' @rdname boot_thresh-methods
-#' @description A bootstrap method to calculate the threshold (stopping rule) in the BS or EBS segmentation described in Cho and Korkas (2018) and adapted for irregularly time series in Korkas (2020).
+#' @description A bootstrap method to calculate the threshold (stopping rule) in the BS or EBS segmentation described in Cho and Korkas (2022) and adapted for irregularly time series in Korkas (2022).
 #' @param H The input irregular time series.
 #' @param q The bootstrap distribution quantile. Default is 0.75.
 #' @param r The number of bootrstap simulations. Default is 100.
@@ -72,12 +72,12 @@ setMethod(f="boot_thresh", definition = function(H,q=.75,r=100,p=1,start.values=
                        error=function(e) {message("...Optimizer not converging: using start.values");
                          acd.est(H,lambda_0 = start.values[1],alpha=switch (acd_p ==0,NULL,start.values[2:(acd_p+1)]),beta=switch(acd_q==0,NULL,start.values[(2+acd_p):(2+acd_p+acd_q)])
                          )})
-    
+
     if (is.null(ACD.obj$convergence)) ACD.obj = acd.est(H,lambda_0 = start.values[1],alpha=switch (acd_p ==0,NULL,start.values[2:(acd_p+1)]),beta=switch(acd_q==0,NULL,start.values[(2+acd_p):(2+acd_p+acd_q)]))
     boots.resids=ACD.obj$residuals
     estpar=ACD.obj$mPara
-    n=length(H) 
-    
+    n=length(H)
+
     M <- foreach(i=iter(1:r),.combine = c,.packages = c('Rcpp','ACDm','eNchange')) %parDo% {
       x=sim.ACD(N=n,lambda_0 = estpar['omega'],alpha = ifelse(is.na(estpar['alpha1']),0,estpar['alpha1']),beta = ifelse(is.na(estpar['beta1']),0,estpar['beta1']),resids=boots.resids)
       z=Z_trans(H=x[[1]],process = "acd",start.values = start.values,dampen.factor = dampen.factor,epsilon = epsilon,LOG=LOG,acd_p = acd_p,acd_q = acd_q)

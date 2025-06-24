@@ -6,7 +6,7 @@
  Ensemble Methods for Multiple Change-Point Detection
 }
 \description{
-Implements a segmentation algorithm for multiple change-point detection in univariate time series using the Ensemble Binary Segmentation of Korkas (2020) <arXiv:2003.03649>.
+Implements a segmentation algorithm for multiple change-point detection in univariate time series using the Ensemble Binary Segmentation of Korkas (2022).
 }
 \details{
 We propose a new technique for
@@ -24,7 +24,7 @@ Karolos K. Korkas <kkorkas@yahoo.co.uk>.
 Maintainer: Karolos K. Korkas <kkorkas@yahoo.co.uk>
 }
 \references{
-Korkas Karolos. "Ensemble Binary Segmentation for irregularly spaced data with change-points" <arXiv:2003.03649>.
+Korkas, K.K., 2022. Ensemble binary segmentation for irregularly spaced data with change-points. Journal of the Korean Statistical Society, 51(1), pp.65-86.
 }
 \keyword{ eNchange }
 
@@ -39,7 +39,7 @@ Korkas Karolos. "Ensemble Binary Segmentation for irregularly spaced data with c
  pw.acd.obj <- pc_acdsim(pw.acd.obj)
  ts.plot(pw.acd.obj@x,main="Ensemble BS");abline(v=EnBinSeg(pw.acd.obj@x)[[1]],col="red")
  #real change-points in grey
- abline(v=floor(pw.acd.obj@cp.loc*pw.acd.obj@N),col="grey",lty=2) 
+ abline(v=floor(pw.acd.obj@cp.loc*pw.acd.obj@N),col="grey",lty=2)
  ts.plot(pw.acd.obj@x,main="Standard BS");abline(v=BinSeg(pw.acd.obj@x)[[1]],col="blue")
  #real change-points in grey
  abline(v=floor(pw.acd.obj@cp.loc*pw.acd.obj@N),col="grey",lty=2)

@@ -1,10 +1,10 @@
 #' A method to simulate nonstationary Hawkes models.
 #' @name pc_hawkessim-class
 #' @param object a simHawkes object
-#' @description A S4 method that takes as an input a \code{simHawkes} object and outputs a simulated nonstationary Hawkes model. The formulation of the of the 
+#' @description A S4 method that takes as an input a \code{simHawkes} object and outputs a simulated nonstationary Hawkes model. The formulation of the of the
 #' piecewise constant ACD model is given in the \code{simHawkes} class.
 #' @references
-#' Korkas Karolos. "Ensemble Binary Segmentation for irregularly spaced data with change-points" <arXiv:2003.03649>.
+#' Korkas, K.K., 2022. Ensemble binary segmentation for irregularly spaced data with change-points. Journal of the Korean Statistical Society, 51(1), pp.65-86.
 #' @examples
 #' pw.hawk.obj <- new("simHawkes")
 #' pw.hawk.obj@cp.loc <- c(0.5)
@@ -17,7 +17,7 @@
 #' ts.plot(pw.hawk.obj@cH)
 #' @import Rcpp foreach doParallel parallel iterators
 #' @importFrom hawkes simulateHawkes
-#' @importFrom utils head tail 
+#' @importFrom utils head tail
 #' @importFrom stats rnorm rgeom runif
 #' @useDynLib eNchange, .registration = TRUE
 #' @export
@@ -32,7 +32,7 @@ setGeneric(name="pc_hawkessim",
            }
 )
 #' @rdname pc_hawkessim-methods
-setMethod(f="pc_hawkessim", signature= "simHawkes", definition = function(object) {
+setMethod(f="pc_hawkessim", signature= "ANY", definition = function(object) {
   if (is.null(object@cp.loc)){
     temp.H = diff(simulateHawkes(object@lambda_0,object@alpha,object@beta,object@horizon)[[1]])
     object@H=temp.H

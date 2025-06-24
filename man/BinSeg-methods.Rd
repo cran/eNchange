@@ -43,7 +43,7 @@ BinSeg(
 \arguments{
 \item{H}{The input irregular time series.}
 
-\item{thresh}{The threshold parameter which acts as a stopping rule to detect further change-points and has the form C log(sample). If "universal" then C is data-independent and preselected using the approach described in Korkas (2020). If "boot" it uses the data-dependent method \code{boot_thresh}. Default is "universal".}
+\item{thresh}{The threshold parameter which acts as a stopping rule to detect further change-points and has the form C log(sample). If "universal" then C is data-independent and preselected using the approach described in Korkas (2022). If "boot" it uses the data-dependent method \code{boot_thresh}. Default is "universal".}
 
 \item{q}{The universal threshold simulation quantile or the bootstrap distribution quantile. Default is 0.99.}
 
@@ -71,7 +71,7 @@ BinSeg(
 Returns a list with the detected change-points and the transformed series.
 }
 \description{
-An S4 method to detect the change-points in an irregularly spaced time series using the Binary Segmentation methodology described in Korkas (2020).
+An S4 method to detect the change-points in an irregularly spaced time series using the Binary Segmentation methodology described in Korkas (2022).
 }
 \examples{
 pw.acd.obj <- new("simACD")
@@ -86,5 +86,5 @@ ts.plot(pw.acd.obj@x,main="Standard BS");abline(v=BinSeg(pw.acd.obj@x)[[1]],col=
 abline(v=floor(pw.acd.obj@cp.loc*pw.acd.obj@N),col="grey",lty=2)
 }
 \references{
-Korkas Karolos. "Ensemble Binary Segmentation for irregularly spaced data with change-points" Preprint <arXiv:2003.03649>.
+Korkas, K.K., 2022. Ensemble binary segmentation for irregularly spaced data with change-points. Journal of the Korean Statistical Society, 51(1), pp.65-86.
 }

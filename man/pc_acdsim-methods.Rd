@@ -5,12 +5,12 @@
 \alias{pc_acdsim-class}
 \alias{pc_acdsim}
 \alias{pc_acdsim-methods}
-\alias{pc_acdsim,simACD-method}
+\alias{pc_acdsim,ANY-method}
 \title{A method to simulate nonstationary ACD models.}
 \usage{
 pc_acdsim(object)
 
-\S4method{pc_acdsim}{simACD}(object)
+\S4method{pc_acdsim}{ANY}(object)
 }
 \arguments{
 \item{object}{a simACD object}
@@ -19,7 +19,7 @@ pc_acdsim(object)
 Returns an object of \code{simACD} class containing a simulated piecewise constant ACD time series.
 }
 \description{
-A S4 method that takes as an input a \code{simACD} object and outputs a simulated nonstationary ACD(1,1) model. The formulation of the of the 
+A S4 method that takes as an input a \code{simACD} object and outputs a simulated nonstationary ACD(1,1) model. The formulation of the of the
 piecewise constant ACD model is given in the \code{simACD} class.
 }
 \examples{
@@ -34,5 +34,5 @@ ts.plot(pw.acd.obj@x)
 ts.plot(pw.acd.obj@psi)
 }
 \references{
-Korkas Karolos. "Ensemble Binary Segmentation for irregularly spaced data with change-points" Preprint.
+Korkas, K.K., 2022. Ensemble binary segmentation for irregularly spaced data with change-points. Journal of the Korean Statistical Society, 51(1), pp.65-86.
 }

@@ -1,9 +1,10 @@
 #' An S4 method to detect the change-points in an irregularly spaced time series using Binary Segmentation.
-#' @references Korkas Karolos. "Ensemble Binary Segmentation for irregularly spaced data with change-points" Preprint <arXiv:2003.03649>.
+#' @references
+#' Korkas, K.K., 2022. Ensemble binary segmentation for irregularly spaced data with change-points. Journal of the Korean Statistical Society, 51(1), pp.65-86.
 #' @rdname BinSeg-methods
-#' @description An S4 method to detect the change-points in an irregularly spaced time series using the Binary Segmentation methodology described in Korkas (2020).
+#' @description An S4 method to detect the change-points in an irregularly spaced time series using the Binary Segmentation methodology described in Korkas (2022).
 #' @param H The input irregular time series.
-#' @param thresh The threshold parameter which acts as a stopping rule to detect further change-points and has the form C log(sample). If "universal" then C is data-independent and preselected using the approach described in Korkas (2020). If "boot" it uses the data-dependent method \code{boot_thresh}. Default is "universal".
+#' @param thresh The threshold parameter which acts as a stopping rule to detect further change-points and has the form C log(sample). If "universal" then C is data-independent and preselected using the approach described in Korkas (2022). If "boot" it uses the data-dependent method \code{boot_thresh}. Default is "universal".
 #' @param q The universal threshold simulation quantile or the bootstrap distribution quantile. Default is 0.99.
 #' @param p The support of the CUSUM statistic. Default is 1.
 #' @param start.values Warm starts for the optimizers of the likelihood functions.
@@ -46,7 +47,7 @@ setMethod(f="BinSeg", definition = function(H, thresh="universal", q=0.99, p= 1,
     } else if (thresh == "boot"){
         thresh = boot_thresh(H=H,q=q,r=100,p=p,start.values=start.values,process=process,do.parallel=do.parallel,dampen.factor=dampen.factor,epsilon= epsilon,LOG=LOG,acd_p=acd_p,acd_q=acd_q)
     }
-    
+
     if (is.null(z)) z=Z_trans(H=H,start.values = start.values,dampen.factor = dampen.factor,epsilon = epsilon,LOG = LOG,process = process,acd_p = acd_p,acd_q = acd_q)
     cp.est = BinSegTree(z,thresh=thresh,p=p)$breakpoints
     out = list()

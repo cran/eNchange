@@ -67,5 +67,5 @@ pw.acd.obj <- pc_acdsim(pw.acd.obj)
 ts.plot(Z_trans(pw.acd.obj@x))
 }
 \references{
-Korkas Karolos. "Ensemble Binary Segmentation for irregularly spaced data with change-points" Preprint <arXiv:2003.03649>.
+Korkas, K.K., 2022. Ensemble binary segmentation for irregularly spaced data with change-points. Journal of the Korean Statistical Society, 51(1), pp.65-86.
 }
